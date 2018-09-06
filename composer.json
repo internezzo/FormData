@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "internezzo/formdata",
+    "require": {
+        "neos/form-builder": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Internezzo\\FormData\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Internezzo.FormData"
+        }
+    }
+}
