@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" target-language="de" product-name="Internezzo.FormData" original="" datatype="plaintext">
+		<body>
+			<trans-unit id="action.delete.confirm" xml:space="preserve">
+				<source><![CDATA[Delete collector and data]]></source>
+				<target><![CDATA[Collector und Daten löschen]]></target>
+			</trans-unit>
+			<trans-unit id="action.delete.operationCannotBeUndone" xml:space="preserve">
+				<source><![CDATA[This operation cannot be undone.]]></source>
+				<target><![CDATA[Diese Aktion kann nicht rückgängig gemacht werden.]]></target>
+			</trans-unit>
+			<trans-unit id="action.delete.willBeDeleted" xml:space="preserve">
+				<source><![CDATA[The collector and all data will be deleted.]]></source>
+				<target><![CDATA[Der Collector und alle Daten werden gelöscht.]]></target>
+			</trans-unit>
+			<trans-unit id="action.new.label" xml:space="preserve">
+				<source><![CDATA[Add collector]]></source>
+				<target><![CDATA[Collector hinzufügen]]></target>
+			</trans-unit>
+			<trans-unit id="collector.csvdownload.tooltip" xml:space="preserve">
+				<source><![CDATA[Download as csv]]></source>
+				<target><![CDATA[Als csv herunterladen]]></target>
+			</trans-unit>
+			<trans-unit id="collector.dataCount" xml:space="preserve">
+				<source><![CDATA[Data count]]></source>
+				<target><![CDATA[Anzahl Daten]]></target>
+			</trans-unit>
+			<trans-unit id="collector.delete.tooltip" xml:space="preserve">
+				<source><![CDATA[Delete collector and data]]></source>
+				<target><![CDATA[Collector und Daten löschen]]></target>
+			</trans-unit>
+			<trans-unit id="collector.firstData" xml:space="preserve">
+				<source><![CDATA[First Data]]></source>
+				<target><![CDATA[Erste Daten]]></target>
+			</trans-unit>
+			<trans-unit id="collector.latestData" xml:space="preserve">
+				<source><![CDATA[Last Data]]></source>
+				<target><![CDATA[Letzte Daten]]></target>
+			</trans-unit>
+			<trans-unit id="collector.show.subtitle" xml:space="preserve">
+				<source><![CDATA[Data for collector]]></source>
+				<target><![CDATA[Daten des Collectors]]></target>
+			</trans-unit>
+			<trans-unit id="collector.show.tooltip" xml:space="preserve">
+				<source><![CDATA[Show data]]></source>
+				<target><![CDATA[Daten anzeigen]]></target>
+			</trans-unit>
+			<trans-unit id="collector.title" xml:space="preserve">
+				<source><![CDATA[Title]]></source>
+				<target><![CDATA[Titel]]></target>
+			</trans-unit>
+			<trans-unit id="delete.flashmessage.success.message" xml:space="preserve">
+				<source><![CDATA[Collector "{0}" has been deleted.]]></source>
+				<target><![CDATA[Collector "{0}" wurde gelöscht.]]></target>
+			</trans-unit>
+			<trans-unit id="delete.flashmessage.success.title" xml:space="preserve">
+				<source><![CDATA[Success]]></source>
+				<target><![CDATA[Erfolgreich]]></target>
+			</trans-unit>
+			<trans-unit id="formdata.action.delete.confirm" xml:space="preserve">
+				<source><![CDATA[Delete data]]></source>
+				<target><![CDATA[Daten löschen]]></target>
+			</trans-unit>
+			<trans-unit id="formdata.action.delete.operationCannotBeUndone" xml:space="preserve">
+				<source><![CDATA[This operation cannot be undone.]]></source>
+				<target><![CDATA[Diese Aktion kann nicht rückgängig gemacht werden.]]></target>
+			</trans-unit>
+			<trans-unit id="formdata.action.delete.willBeDeleted" xml:space="preserve">
+				<source><![CDATA[Data will be deleted.]]></source>
+				<target><![CDATA[Die Daten werden gelöscht.]]></target>
+			</trans-unit>
+			<trans-unit id="formdata.back" xml:space="preserve">
+				<source><![CDATA[Back]]></source>
+				<target><![CDATA[Zurück]]></target>
+			</trans-unit>
+			<trans-unit id="formdata.delete.flashmessage.success.message" xml:space="preserve">
+				<source><![CDATA[Data has been deleted.]]></source>
+				<target><![CDATA[Daten wurde gelöscht.]]></target>
+			</trans-unit>
+			<trans-unit id="formdata.delete.flashmessage.success.title" xml:space="preserve">
+				<source><![CDATA[Success]]></source>
+				<target><![CDATA[Erfolgreich]]></target>
+			</trans-unit>
+			<trans-unit id="formData.delete.tooltip" xml:space="preserve">
+				<source><![CDATA[Delete data]]></source>
+				<target><![CDATA[Daten löschen]]></target>
+			</trans-unit>
+			<trans-unit id="formdata.message.reallyDelete" xml:space="preserve">
+				<source><![CDATA[Confirm deleting data.]]></source>
+				<target><![CDATA[Löschen der Daten bestätigen.]]></target>
+			</trans-unit>
+			<trans-unit id="formdata.show.received" xml:space="preserve">
+				<source><![CDATA[Received]]></source>
+				<target><![CDATA[Empfangen]]></target>
+			</trans-unit>
+			<trans-unit id="formdata.tooltip.delete" xml:space="preserve">
+				<source><![CDATA[Delete data]]></source>
+				<target><![CDATA[Daten löschen]]></target>
+			</trans-unit>
+			<trans-unit id="message.reallyDelete" xml:space="preserve">
+				<source><![CDATA[Confirm deleting collector {0}]]></source>
+				<target><![CDATA[Löschen des Collectors {0} bestätigen]]></target>
+			</trans-unit>
+			<trans-unit id="new.collector.legend" xml:space="preserve">
+				<source><![CDATA[New Collector]]></source>
+				<target><![CDATA[Neuer Collector]]></target>
+			</trans-unit>
+			<trans-unit id="new.collector.submit.label" xml:space="preserve">
+				<source><![CDATA[Create collector]]></source>
+				<target><![CDATA[Collector anlegen]]></target>
+			</trans-unit>
+			<trans-unit id="new.collector.title" xml:space="preserve">
+				<source><![CDATA[Title]]></source>
+				<target><![CDATA[Titel]]></target>
+			</trans-unit>
+			<trans-unit id="tooltip.delete" xml:space="preserve">
+				<source><![CDATA[Delete collector and data]]></source>
+				<target><![CDATA[Collector und Daten löschen]]></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

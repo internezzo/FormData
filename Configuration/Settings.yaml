@@ -1,0 +1,29 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        'Internezzo.FormData': true
+    userInterface:
+      translation:
+        autoInclude:
+          Internezzo.FormData:
+            - 'NodeTypes/*'
+    modules:
+      management:
+        submodules:
+          formDataModule:
+            label: 'Form Data'
+            controller: 'Internezzo\FormData\Controller\Backend\CollectorController'
+            description: 'Manage form data'
+            icon: 'icon-save'
+            privilegeTarget: 'Internezzo.FormData:FormDataModule'
+  Form:
+    presets:
+      default:
+        finisherPresets:
+          'Internezzo.FormData:FormData':
+            implementationClassName: Internezzo\FormData\Finishers\FormDataFinisher
+            options: {  }
+Internezzo:
+  FormData:
+    skipElementTypes: []

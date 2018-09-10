@@ -1,0 +1,21 @@
+'Internezzo.FormData:FormDataFinisher':
+  superTypes:
+    'Neos.Form.Builder:AbstractFinisher': TRUE
+  ui:
+    label: i18n
+    icon: 'icon-save'
+    inspector:
+      groups:
+        'finisher':
+          icon: 'icon-save'
+  properties:
+    collector:
+      type: string
+      ui:
+        inspector:
+          group: finisher
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'internezzo-formdata-collectors'
+            multiple: false
+        label: i18n

@@ -1,0 +1,6 @@
+prototype(Internezzo.FormData:FormDataFinisher.Definition) < prototype(Neos.Form.Builder:Finisher.Definition) {
+    formElementType = 'Internezzo.FormData:FormData'
+
+    options {
+    }
+}

@@ -1,0 +1,22 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+<f:layout name="BackendModule" />
+
+<f:section name="content">
+	<f:form action="create" class="user user-edit" objectName="collector">
+		<fieldset>
+			<legend>{neos:backend.translate(id: 'new.collector.legend', source: 'Modules/FormData', package: 'Internezzo.FormData')}</legend>
+
+			<div class="neos-control-group{f:validation.ifHasErrors(for: 'collector.title', then: ' neos-error')}">
+				<label class="neos-control-label" for="title">{neos:backend.translate(id: 'new.collector.title', source: 'Modules/FormData', package: 'Internezzo.FormData')}</label>
+				<div class="neos-controls">
+					<f:form.textfield property="title" id="title" class="neos-span12" autofocus="true" required="true" />
+					<f:render partial="FieldValidationResults" arguments="{fieldname: 'collector.title'}"/>
+				</div>
+			</div>
+		</fieldset>
+		<div class="neos-footer">
+			<f:link.action action="index" class="neos-button">{neos:backend.translate(id: 'cancel')}</f:link.action>
+			<f:form.submit value="{neos:backend.translate(id: 'new.collector.submit.label', source: 'Modules/FormData', package: 'Internezzo.FormData')}" class="neos-button neos-button-primary" />
+		</div>
+	</f:form>
+</f:section>

@@ -1,0 +1,70 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace infd=Internezzo\FormData\ViewHelpers}
+<f:layout name="BackendModule" />
+
+<f:section name="subtitle">
+	<h2>{neos:backend.translate(id: 'collector.show.subtitle', source: 'Modules/FormData', package: 'Internezzo.FormData')}: {collector.title}</h2>
+</f:section>
+
+<f:section name="content">
+	<div class="neos-row-fluid">
+		<table class="neos-table">
+			<thead>
+			<tr>
+				<th>{neos:backend.translate(id: 'formdata.show.received', source: 'Modules/FormData', package: 'Internezzo.FormData')}</th>
+				<f:for each="{cols}" as="col">
+					<th>{col}</th>
+				</f:for>
+				<th>&nbsp;</th>
+			</tr>
+			</thead>
+			<f:for each="{collector.formData}" key="index" as="formData">
+				<tr>
+					<td><f:format.date format="d.m.Y H:i">{formData.receivedDateTime}</f:format.date></td>
+					<f:for each="{cols}" as="col">
+						<td>{infd:objectAccess(object: formData.payload, key: col)}</td>
+					</f:for>
+					<td class="neos-action">
+						<div class="neos-pull-right">
+							<button class="neos-button neos-button-danger" title="{neos:backend.translate(id: 'formdata.tooltip.delete', source: 'Modules/FormData', package: 'Internezzo.FormData')}" data-toggle="modal" href="#formdata-{index}" data-neos-toggle="tooltip">
+								<i class="icon-trash icon-white"></i>
+							</button>
+							<div class="neos-hide" id="formdata-{index}">
+								<div class="neos-modal-centered">
+									<div class="neos-modal-content">
+										<div class="neos-modal-header">
+											<button type="button" class="neos-close neos-button" data-dismiss="modal"></button>
+											<div class="neos-header">
+												<neos:backend.translate id="formdata.message.reallyDelete" source="Modules/FormData" package="Internezzo.FormData"/>
+											</div>
+											<div>
+												<div class="neos-subheader">
+													<p>
+														<neos:backend.translate id="formdata.action.delete.willBeDeleted" source="Modules/FormData" package="Internezzo.FormData"/><br/>
+														<neos:backend.translate id="formdata.action.delete.operationCannotBeUndone" source="Modules/FormData" package="Internezzo.FormData"/>
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="neos-modal-footer">
+											<a href="#" class="neos-button" data-dismiss="modal">{neos:backend.translate(id: 'cancel', value: 'Cancel')}</a>
+											<f:form action="deleteFormData" arguments="{formData: formData}" class="neos-inline">
+												<button type="submit" class="neos-button neos-button-danger" title="{neos:backend.translate(id: 'formData.delete.tooltip', source: 'Modules/FormData', package: 'Internezzo.FormData')}">
+													<neos:backend.translate id="formdata.action.delete.confirm" source="Modules/FormData" package="Internezzo.FormData" />
+												</button>
+											</f:form>
+										</div>
+									</div>
+								</div>
+								<div class="neos-modal-backdrop neos-in"></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</f:for>
+		</table>
+	</div>
+	<div class="neos-footer">
+		<f:link.action action="index" class="neos-button">{neos:backend.translate(id: 'formdata.back', source: 'Modules/FormData', package: 'Internezzo.FormData')}</f:link.action>
+	</div>
+</f:section>

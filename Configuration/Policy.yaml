@@ -1,0 +1,21 @@
+privilegeTargets:
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Internezzo.FormData:FormDataModule':
+      matcher: 'method(Internezzo\FormData\Controller\Backend\CollectorController->(?!delete|new|create).*Action())'
+    'Internezzo.FormData:CreateCollection':
+      matcher: 'method(Internezzo\FormData\Controller\Backend\CollectorController->(new|create)Action())'
+    'Internezzo.FormData:DeleteCollection':
+      matcher: 'method(Internezzo\FormData\Controller\Backend\CollectorController->deleteAction())'
+
+roles:
+  'Neos.Neos:Administrator':
+    privileges:
+      -
+        privilegeTarget: 'Internezzo.FormData:FormDataModule'
+        permission: GRANT
+      -
+        privilegeTarget: 'Internezzo.FormData:CreateCollection'
+        permission: GRANT
+      -
+        privilegeTarget: 'Internezzo.FormData:DeleteCollection'
+        permission: GRANT

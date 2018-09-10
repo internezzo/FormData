@@ -1,0 +1,77 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+<f:layout name="BackendModule" />
+
+<f:section name="content">
+	<div class="neos-row-fluid">
+		<table class="neos-table">
+			<thead>
+			<tr>
+				<th><neos:backend.translate id="collector.title" source="Modules/FormData" package="Internezzo.FormData"/></th>
+				<th><neos:backend.translate id="collector.dataCount" source="Modules/FormData" package="Internezzo.FormData"/></th>
+				<th><neos:backend.translate id="collector.firstData" source="Modules/FormData" package="Internezzo.FormData"/></th>
+				<th><neos:backend.translate id="collector.latestData" source="Modules/FormData" package="Internezzo.FormData"/></th>
+				<th>&nbsp;</th>
+			</tr>
+			</thead>
+			<f:for each="{collectors}" key="index" as="collector">
+				<tr>
+					<td>{collector.title}</td>
+					<td>{collector.formData -> f:count()}</td>
+					<td>{collector.firstFormData.receivedDateTime -> f:format.date(format:'d.m.Y H:i:s')}</td>
+					<td>{collector.lastFormData.receivedDateTime -> f:format.date(format:'d.m.Y H:i:s')}</td>
+					<td class="neos-action">
+						<div class="neos-pull-right">
+							<f:if condition="{collector.formData -> f:count()} > 0">
+								<f:link.action action="downloadAsCsv" arguments="{collector: collector}" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'collector.csvdownload.tooltip', source: 'Modules/FormData', package: 'Internezzo.FormData')}" additionalAttributes="{data-neos-toggle: 'tooltip'}">
+									<i class="icon-cloud-download icon-white"></i>
+								</f:link.action>
+							</f:if>
+							<f:link.action action="show" arguments="{collector: collector}" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'collector.show.tooltip', source: 'Modules/FormData', package: 'Internezzo.FormData')}" additionalAttributes="{data-neos-toggle: 'tooltip'}">
+								<i class="icon-info-sign icon-white"></i>
+							</f:link.action>
+							<f:security.ifAccess privilegeTarget="Internezzo.FormData:DeleteCollection">
+								<button class="neos-button neos-button-danger" title="{neos:backend.translate(id: 'tooltip.delete', source: 'Modules/FormData', package: 'Internezzo.FormData')}" data-toggle="modal" href="#collector-{index}" data-neos-toggle="tooltip">
+									<i class="icon-trash icon-white"></i>
+								</button>
+								<div class="neos-hide" id="collector-{index}">
+									<div class="neos-modal-centered">
+										<div class="neos-modal-content">
+											<div class="neos-modal-header">
+												<button type="button" class="neos-close neos-button" data-dismiss="modal"></button>
+												<div class="neos-header">
+													<neos:backend.translate id="message.reallyDelete" arguments="{0: collector.title}" source="Modules/FormData" package="Internezzo.FormData"/>
+												</div>
+												<div>
+													<div class="neos-subheader">
+														<p>
+															<neos:backend.translate id="action.delete.willBeDeleted" source="Modules/FormData" package="Internezzo.FormData"/><br/>
+															<neos:backend.translate id="action.delete.operationCannotBeUndone" source="Modules/FormData" package="Internezzo.FormData"/>
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="neos-modal-footer">
+												<a href="#" class="neos-button" data-dismiss="modal">{neos:backend.translate(id: 'cancel', value: 'Cancel')}</a>
+												<f:form action="delete" arguments="{collector: collector}" class="neos-inline">
+													<button type="submit" class="neos-button neos-button-danger" title="{neos:backend.translate(id: 'collector.delete.tooltip', source: 'Modules/FormData', package: 'Internezzo.FormData')}">
+														<neos:backend.translate id="action.delete.confirm" source="Modules/FormData" package="Internezzo.FormData" />
+													</button>
+												</f:form>
+											</div>
+										</div>
+									</div>
+									<div class="neos-modal-backdrop neos-in"></div>
+								</div>
+							</f:security.ifAccess>
+						</div>
+					</td>
+				</tr>
+			</f:for>
+		</table>
+	</div>
+	<div class="neos-footer">
+		<f:security.ifAccess privilegeTarget="Internezzo.FormData:CreateCollection">
+			<f:link.action action="new" class="neos-button neos-button-primary" title="{neos:backend.translate(id: 'action.new.label', source: 'Modules/FormData', package: 'Internezzo.FormData')}"><neos:backend.translate id="action.new.label" source="Modules/FormData" package="Internezzo.FormData"/></f:link.action>
+		</f:security.ifAccess>
+	</div>
+</f:section>
