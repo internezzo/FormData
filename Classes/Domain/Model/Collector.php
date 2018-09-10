@@ -19,8 +19,9 @@ class Collector
     protected $title;
 
     /**
-     * @ORM\OneToMany(mappedBy="collector", orphanRemoval=true, cascade={"persist", "remove"})
      * @var Collection<\Internezzo\FormData\Domain\Model\FormData>
+     * @ORM\OneToMany(mappedBy="collector", orphanRemoval=true, cascade={"persist", "remove"})
+     * @ORM\OrderBy({"receivedDateTime"="DESC"})
      */
     protected $formData;
 
@@ -61,7 +62,7 @@ class Collector
         if ($this->formData->isEmpty()) {
             return null;
         }
-        return $this->formData->first();
+        return $this->formData->last();
     }
 
     /**
@@ -72,7 +73,7 @@ class Collector
         if ($this->formData->isEmpty()) {
             return null;
         }
-        return $this->formData->last();
+        return $this->formData->first();
     }
 
 
