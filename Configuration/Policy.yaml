@@ -5,7 +5,7 @@ privilegeTargets:
     'Internezzo.FormData:CreateCollection':
       matcher: 'method(Internezzo\FormData\Controller\Backend\CollectorController->(new|create)Action())'
     'Internezzo.FormData:DeleteCollection':
-      matcher: 'method(Internezzo\FormData\Controller\Backend\CollectorController->deleteAction())'
+      matcher: 'method(Internezzo\FormData\Controller\Backend\CollectorController->(delete|deleteFormData)Action())'
 
 roles:
   'Neos.Neos:Administrator':
