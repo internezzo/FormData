@@ -38,6 +38,10 @@
 				<source><![CDATA[Last Data]]></source>
 				<target><![CDATA[Letzte Daten]]></target>
 			</trans-unit>
+			<trans-unit id="collector.roles" xml:space="preserve">
+				<source><![CDATA[Authorized Roles]]></source>
+				<target><![CDATA[Zugriffsberechtigte Rollen]]></target>
+			</trans-unit>
 			<trans-unit id="collector.show.subtitle" xml:space="preserve">
 				<source><![CDATA[Data for collector]]></source>
 				<target><![CDATA[Daten des Collectors]]></target>
