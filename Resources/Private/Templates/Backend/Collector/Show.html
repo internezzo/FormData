@@ -64,6 +64,27 @@
 			</f:for>
 		</table>
 	</div>
+	<f:security.ifAccess privilegeTarget="{adminPrivilege}">
+		<div class="neos-row-fluid">
+			<f:form action="update" object="{collector}" objectName="collector">
+				<fieldset>
+					<legend>{neos:backend.translate(id: 'show.roles.legend', source: 'Modules/FormData', package: 'Internezzo.FormData')}</legend>
+
+					<f:for each="{roles}" as="role" iteration="rolesIteration">
+						<div class="neos-controls">
+							<label for="role-{rolesIteration.cycle}" class="neos-checkbox">
+								<f:form.checkbox name="roleIdentifiers[]" value="{role.role.identifier}" id="role-{rolesIteration.cycle}"  checked="{role.assigned}" /><span></span>
+								<span>{role.role.name}</span>
+							</label>
+						</div>
+					</f:for>
+					<f:security.ifAccess privilegeTarget="{adminPrivilege}">
+						<f:form.submit value="{neos:backend.translate(id: 'show.submit.label', source: 'Modules/FormData', package: 'Internezzo.FormData')}" class="neos-button neos-button-primary" />
+					</f:security.ifAccess>
+				</fieldset>
+			</f:form>
+		</div>
+	</f:security.ifAccess>
 	<div class="neos-footer">
 		<f:link.action action="index" class="neos-button">{neos:backend.translate(id: 'formdata.back', source: 'Modules/FormData', package: 'Internezzo.FormData')}</f:link.action>
 	</div>

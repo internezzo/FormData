@@ -114,9 +114,25 @@
 				<source><![CDATA[Title]]></source>
 				<target><![CDATA[Title]]></target>
 			</trans-unit>
+			<trans-unit id="show.roles.legend" xml:space="preserve">
+				<source><![CDATA[Authorized Roles]]></source>
+				<target><![CDATA[Authorized Roles]]></target>
+			</trans-unit>
+			<trans-unit id="show.submit.label" xml:space="preserve">
+				<source><![CDATA[Save]]></source>
+				<target><![CDATA[Save]]></target>
+			</trans-unit>
 			<trans-unit id="tooltip.delete" xml:space="preserve">
 				<source><![CDATA[Delete collector and data]]></source>
 				<target><![CDATA[Delete collector and data]]></target>
+			</trans-unit>
+			<trans-unit id="update.flashmessage.success.message" xml:space="preserve">
+				<source><![CDATA[Collector {collectorTitle} has been updated.]]></source>
+				<target><![CDATA[Collector {collectorTitle} has been updated.]]></target>
+			</trans-unit>
+			<trans-unit id="update.flashmessage.success.title" xml:space="preserve">
+				<source><![CDATA[Success]]></source>
+				<target><![CDATA[Success]]></target>
 			</trans-unit>
 		</body>
 	</file>

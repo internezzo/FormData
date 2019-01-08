@@ -10,6 +10,11 @@
 				<th><neos:backend.translate id="collector.dataCount" source="Modules/FormData" package="Internezzo.FormData"/></th>
 				<th><neos:backend.translate id="collector.firstData" source="Modules/FormData" package="Internezzo.FormData"/></th>
 				<th><neos:backend.translate id="collector.latestData" source="Modules/FormData" package="Internezzo.FormData"/></th>
+				<th>
+					<f:security.ifAccess privilegeTarget="{adminPrivilege}">
+						<neos:backend.translate id="collector.roles" source="Modules/FormData" package="Internezzo.FormData"/>
+					</f:security.ifAccess>
+				</th>
 				<th>&nbsp;</th>
 			</tr>
 			</thead>
@@ -19,6 +24,13 @@
 					<td>{collector.formData -> f:count()}</td>
 					<td>{collector.firstFormData.receivedDateTime -> f:format.date(format:'d.m.Y H:i:s')}</td>
 					<td>{collector.lastFormData.receivedDateTime -> f:format.date(format:'d.m.Y H:i:s')}</td>
+					<td>
+						<f:security.ifAccess privilegeTarget="{adminPrivilege}">
+							<f:for each="{collector.roles}" as="role">
+								<span class="neos-label">{role.name}</span>
+							</f:for>
+						</f:security.ifAccess>
+					</td>
 					<td class="neos-action">
 						<div class="neos-pull-right">
 							<f:if condition="{collector.formData -> f:count()} > 0">

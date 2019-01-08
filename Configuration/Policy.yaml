@@ -1,5 +1,7 @@
 privilegeTargets:
   'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Internezzo.FormData:FormDataModuleAdmin':
+      matcher: 'method(Internezzo\FormData\Controller\Backend\CollectorController->(update)Action())'
     'Internezzo.FormData:FormDataModule':
       matcher: 'method(Internezzo\FormData\Controller\Backend\CollectorController->(?!delete|new|create).*Action())'
     'Internezzo.FormData:CreateCollection':
@@ -10,6 +12,9 @@ privilegeTargets:
 roles:
   'Neos.Neos:Administrator':
     privileges:
+      -
+        privilegeTarget: 'Internezzo.FormData:FormDataModuleAdmin'
+        permission: GRANT
       -
         privilegeTarget: 'Internezzo.FormData:FormDataModule'
         permission: GRANT
